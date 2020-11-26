@@ -1,16 +1,17 @@
+from typing import Dict
 import re
 import requests
 from bs4 import BeautifulSoup
 
 
 class Item:
-    def __init__(self, url, tag_name, query):
+    def __init__(self, url: str, tag_name: str, query: Dict):
         self.url = url
         self.tag_name = tag_name
         self.query = query
         self.price = None
 
-    def load_price(self):
+    def load_price(self) -> float:
         response = requests.get(self.url)
         content = response.content
         soup = BeautifulSoup(content, "html.parser")
