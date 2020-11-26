@@ -6,5 +6,4 @@ tag_name = "p"
 query = {"class": "price price--large"}
 
 item = Item(url, tag_name, query)
-item2 = Item(url, tag_name, query)
 print(item.load_price())
