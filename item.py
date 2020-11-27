@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from common.database import Database
 
+
 class Item:
     def __init__(self, url: str, tag_name: str, query: Dict, _id: str = None):
         self.url = url
@@ -38,6 +39,11 @@ class Item:
             "tag_name": self.tag_name,
             "query": self.query
         }
+
+    @classmethod
+    def all(cls):
+        items_from_db = Database.find("items", {})
+        return [Item(**item) for item in items_from_db]
 
     def save_to_mongo(self):
         Database.insert(self.collection, self.json())
