@@ -5,5 +5,10 @@ url = "https://www.johnlewis.com/2020-apple-ipad-pro-11-inch-a12z-bionic-ios-wi-
 tag_name = "p"
 query = {"class": "price price--large"}
 
-item = Item(url, tag_name, query)
-print(item.load_price())
+iPad = Item(url, tag_name, query)
+iPad.save_to_mongo()
+
+#items_loaded = Item.all()
+#print(items_loaded)
+#print(items_loaded[0].load_price)
+
