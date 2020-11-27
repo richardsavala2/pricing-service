@@ -25,7 +25,7 @@ class Item:
         element = soup.find(self.tag_name, self.query)
         string_price = element.text.strip()
 
-        pattern = re.compile(r"(\d*?,?\d+\.\d\d)")
+        pattern = re.compile(r"(\d*?,?\d*\.\d\d)")
         match = pattern.search(string_price)
         found_price = match.group(1)
         without_commas = found_price.replace(",", "")
