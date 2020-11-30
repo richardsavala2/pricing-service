@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <header><h1>Create Item</h1></header>
-    <section class="create-item-form">
+    <header><h1>Create Alert</h1></header>
+    <section class="create-alert-form">
         <form method="post">
             <div class="form-group">
                 <label for="url">URL:</label>
-                <input type="text" class="form-control" id="url" name="url" placeholder="https://..." />
+                <input type="text" class="form-control" id="url" name="url" />
             </div>
             <div class="form-group">
-                <label for="tag_name">Tag name:</label>
-                <input type="text" class="form-control" id="tag_name" name="tag_name" placeholder="span" aria-describedby="tagNameHelp"/>
-                <small class="form-text text-muted" id="tagNameHelp">
-                    What is the HTML tag of the item that contains the item price?
+                <label for="price_limit">Price limit:</label>
+                <input type="text" class="form-control" id="price_limit" name="price_limit" placeholder="120" aria-describedby="priceLimitHelp"/>
+                <small class="form-text text-muted" id="priceLimitHelp">
+                    Under which price fot the item would you like to get notified?
                 </small>
             </div>
             <div class="form-group">
                 <label for="query">Query:</label>
                 <input type="text" class="form-control" id="query" name="query" placeholder='{"id": "..."}' aria-describedby="queryHelp"/>
-                <small id="queryHelp" class="form-text text-muted">
+                <small class="form-text text-muted">
                     What JSON query would we have to do to find the specific tag with the price?
                 </small>
             </div>
